@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <b>
+                <th>empid</th>
+                <th>empname</th>
+                <th>salary</th>
+            </b>
+        </tr>
+        {% for e in emp %}
+        <tr>
+            <td>{{ e.empid }}</td>
+            <td>{{ e.empname }}</td>
+            <td>{{ e.salary }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% if emp.has_previous %}
+    <a href="?page= {{ emp.previous_page_number }}" > Previous</a>
+    {% endif %}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {% if emp.has_next %}
+    <a href="?page= {{ emp.next_page_number }}"> Next </a>
+    {% endif %}
+</body>
+</html>
