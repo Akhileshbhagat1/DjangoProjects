@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method = "POST"  action = "/insert/">
+            {% csrf_token %}
+  <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+      <input type="number" class="form-control" id="inlineFormInputName" placeholder="Serial No" name="sno">
+    </div>
+
+    <div class="col-auto my-1">
+      <div class="input-group">
+        <div class="input-group-prepend">
+        </div>
+        <input type="text" class="form-control" id="inlineFormInputUsername" placeholder="Student Name" name = "sname">
+      </div>
+    </div>
+
+    <div class="col-auto my-1">
+    <input type="text" class="form-control" id="inlineFormInputGroupdate" placeholder="Location" name = "loc">
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
